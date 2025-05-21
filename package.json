@@ -1,7 +1,7 @@
 {
   "name": "cardtrader-ct0-api",
   "version": "1.0.0",
-  "description": "Scraper para obtener precios CT0 desde CardTrader",
+  "description": "Scraper para obtener precios CT0 desde CardTrader usando chrome-aws-lambda",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

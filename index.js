@@ -21,11 +21,13 @@ app.get("/precioCT0", async (req, res) => {
   const url = `https://www.cardtrader.com/es/cards/${normalizar(carta)}-${normalizar(expansion)}`;
 
   try {
+    const executablePath = await chromium.executablePath || '/usr/bin/chromium-browser';
+
     const browser = await puppeteer.launch({
-      executablePath: await chromium.executablePath,
+      executablePath,
       headless: chromium.headless,
       args: chromium.args,
-      defaultViewport: chromium.defaultViewport
+      defaultViewport: chromium.defaultViewport,
     });
 
     const page = await browser.newPage();
