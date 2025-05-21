@@ -21,7 +21,7 @@ app.get("/precioCT0", async (req, res) => {
 
   try {
     const browser = await puppeteer.launch({
-      executablePath: "/usr/bin/chromium-browser",
+      executablePath: "/opt/render/project/.render/chrome",
       headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox"]
     });

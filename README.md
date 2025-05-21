@@ -1,6 +1,6 @@
 # CardTrader CT0 API
 
-Scraper con Puppeteer Core y Chromium del sistema.
+Scraper usando puppeteer-core y la ruta correcta de Chromium en Render.
 
 ## Endpoint
 
