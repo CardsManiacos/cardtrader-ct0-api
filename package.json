@@ -1,0 +1,13 @@
+{
+  "name": "cardtrader-ct0-api",
+  "version": "1.0.0",
+  "description": "Scraper para obtener precios CT0 desde CardTrader",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^21.3.8"
+  }
+}
