@@ -1,5 +1,6 @@
 const express = require("express");
 const puppeteer = require("puppeteer-core");
+const chromium = require("chrome-aws-lambda");
 const app = express();
 
 function normalizar(str) {
@@ -21,9 +22,10 @@ app.get("/precioCT0", async (req, res) => {
 
   try {
     const browser = await puppeteer.launch({
-      executablePath: "/opt/render/project/.render/chrome",
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"]
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport
     });
 
     const page = await browser.newPage();
