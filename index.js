@@ -1,5 +1,5 @@
 const express = require("express");
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 const app = express();
 
 function normalizar(str) {
@@ -21,9 +21,11 @@ app.get("/precioCT0", async (req, res) => {
 
   try {
     const browser = await puppeteer.launch({
+      executablePath: "/usr/bin/chromium-browser",
       headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      args: ["--no-sandbox", "--disable-setuid-sandbox"]
     });
+
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 10000 });
     await page.waitForTimeout(2500);
